@@ -1,31 +1,58 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Xiseous</title>
-  <style type="text/css">
-    html, body {margin: 0;padding: 0;height: 100%;width: 100%;}
-    body {background: url('./Xiseous_files/1_1.gif') no-repeat center center fixed;background-size: cover;overflow: hidden;}
-	  .xiseous {position: absolute;top: 50%;left: 49%;margin-top: -50px;margin-left: -250px;z-index: 1;}
-#apDiv1 {position: absolute;width: 200px;height: 115px;z-index: 1;}
-audio {display: none;}
-  </style>
+	<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Xiseous</title>
+<style type="text/css">
+.xiseous {
+	position: absolute;
+	top: 50%;
+	left: 49%;
+	margin-top: -50px;
+	margin-left: -250px;
+}
+#apDiv1 {
+	position: absolute;
+	width: 200px;
+	height: 115px;
+	z-index: 1;
+}
+body { 	
+position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50.4%) translateY(-50%);
+    -moz-transform: translateX(-50.4%) translateY(-50%);
+    -webkit-transform: translateX(-50.4%) translateY(-50%);
+    transform: translateX(-50.4%) translateY(-50%);
+    background: url(1_1.mp4) no-repeat;
+    background-size: cover; 
+}	
+	</style>
 </head>
+<span id="warning-container"><i data-reactroot=""></i></span>
 <body>
-  <p><img class="xiseous" src="./Xiseous_files/xiseous.gif" width="586" height="125" alt="Xiseous Logo"></p>
-  <audio controls loop autoplay hidden>
-    <source src="Xiseous_files/2.mp3" type="audio/mpeg"> 
-  </audio>
-  <script type="text/javascript"> 
-    var title = "Xiseous         ";
-    var position = 0;
-    function scrolltitle() {
-        document.title = title.substring(position, title.length) + title.substring(0, position); 
-        position++;
-        if (position > title.length) position = 0;
-        setTimeout(scrolltitle, 170);
-    }
-    scrolltitle();
-  </script>
-</body>
+<video controls autoplay loop>
+  <source src="./Xiseous_files/1_1.mp4" type="video/mp4">
+</video>	
+<p><img class="xiseous" src="./Xiseous_files/xiseous.gif" width="586" height="125"></p>
+	<audio controls loop autoplay hidden>
+		    <source src="Xiseous_files/2.mp3" type="audio/mpeg"> 
+	    </audio>
+<script type="text/javascript"> 
+title = "Xiseous         ";
+position = 0;
+function scrolltitle() {
+    document.title = title.substring(position, title.length) + title.substring(0, position); 
+    position++;
+    if (position > title.length) position = 0;
+    titleScroll = window.setTimeout(scrolltitle,170);
+}
+scrolltitle();
+		</script>
+	</body>
 </html>
